@@ -1,0 +1,34 @@
+# Define the main function for the calculator
+def calculator():
+    # Get input from the user
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        return
+
+    op = input("Enter the operator (+, -, *, /): ")
+
+    # Perform the calculation based on the operator
+    try:
+        if op == "+":
+            result = num1 + num2
+        elif op == "-":
+            result = num1 - num2
+        elif op == "*":
+            result = num1 * num2
+        elif op == "/":
+            result = num1 / num2
+        else:
+            print("Invalid operator!")
+            return
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
+        return
+
+    # Print the result
+    print("Result: ", result)
+
+# Call the calculator function to start the program
+calculator()
